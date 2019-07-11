@@ -112,11 +112,12 @@ class Autocomplete extends Component {
   }
 
   componentDidMount() {
-    const {data} = this.props;
+    const {data, selectedValue} = this.props;
     this.mounted = true;
     if (data) {
       this.setState({items: data});
     }
+    this.setItem(selectedValue)
   }
 
   componentWillUnmount() {
